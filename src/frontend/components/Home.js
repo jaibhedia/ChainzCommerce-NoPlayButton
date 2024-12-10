@@ -48,7 +48,7 @@ const Home = ({ web3Handler, account }) => {
                       </a>
                     ) : (
                       <Button onClick={web3Handler} variant="outline-light">
-                        Connect Wallet
+                        Wallet Connected
                       </Button>
                     )}
                   </div>
@@ -56,7 +56,7 @@ const Home = ({ web3Handler, account }) => {
               </div>
               <div className="mt-8 text-left">
                 <h3 className="text-2xl text-white font-bold mb-4">
-                  Why Choose Our NFT Marketplace?
+                  Why Choose Us?
                 </h3>
                 <ul className="text-gray-400">
                   <li className="flex items-center mb-2">
@@ -64,12 +64,12 @@ const Home = ({ web3Handler, account }) => {
                     Secure Transactions
                   </li>
                   <li className="flex items-center mb-2">
-                    <span className="mr-2">&#10003;</span> Wide Range of NFT
+                    <span className="mr-2">&#10003;</span> Wide Range of
                     Options to Explore
                   </li>
                   <li className="flex items-center mb-2">
                     <span className="mr-2">&#10003;</span> Earn Rewards for
-                    Trading Your NFTs
+                    each transactiond done
                   </li>
                 </ul>
               </div>
@@ -89,7 +89,7 @@ const Home = ({ web3Handler, account }) => {
         <div className="relative px-8 rounded-lg shadow-lg">
           <div className="max-w-2xl mx-auto fade-in-section">
             <h2 className="text-3xl font-bold mb-4 text-white">
-              Create your NFT List Which makes your data Worth
+              Add your product
             </h2>
             <p className="text-gray-600 mb-6">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -102,7 +102,7 @@ const Home = ({ web3Handler, account }) => {
                   to="/create"
                   className="text-center text-white"
                 >
-                  Create your NFT
+                  Create your Product
                 </Nav.Link>
               </div>
             </div>
@@ -114,9 +114,9 @@ const Home = ({ web3Handler, account }) => {
         <div className="bg-none border-3 border-gray-500 p-4 rounded-md relative hover:scale-105 hover:transition-transform cursor-pointer">
           <img src={item1} alt="item1" />
           <p className=" text-gray-300  tracking-wide">
-            Total supply <br />
+            Total products <br />
             <span className="font-semibold text-white text-xl tracking-wide">
-              255,080,266
+              25506
             </span>
           </p>
         </div>
@@ -156,7 +156,7 @@ const Home = ({ web3Handler, account }) => {
           <p className="text-gray-300">
             Exclusive Collections <br />
             <span className="font-semibold text-white text-xl tracking-wide">
-              Discover limited edition NFT collections.
+              Discover limited edition NFT collections and product.
             </span>
           </p>
         </div>
@@ -166,7 +166,7 @@ const Home = ({ web3Handler, account }) => {
           <p className="text-gray-300">
             Community Engagement <br />
             <span className="font-semibold text-white text-xl tracking-wide">
-              Connect with other NFT enthusiasts and creators.
+              Connect with other enthusiasts and creators.
             </span>
           </p>
         </div>

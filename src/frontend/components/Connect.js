@@ -11,7 +11,7 @@ const Connect = ({ onConnect }) => {
     >
       <div className="text-center relative">
         <h1 className="text-3xl font-bold mb-4">
-          Welcome to Your NFT Marketplace!
+          Welcome to Your Decentralised Marketplace!
         </h1>
         <p className="text-gray-400 mb-4">
           Connect your Ethereum wallet to get started.
