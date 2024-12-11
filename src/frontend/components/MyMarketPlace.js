@@ -26,7 +26,7 @@ export const MyMarketPlace = ({ marketplace, nft, account, web3Handler }) => {
           name: metadata.name,
           description: metadata.description,
           image: metadata.image,
-          category: metadata.category || "Misc", // Default to Misc if no category
+          category: metadata.category || "Products", // Default to Misc if no category
         });
       }
     }
