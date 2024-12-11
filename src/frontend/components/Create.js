@@ -146,6 +146,16 @@ const Create = ({ marketplace, nft }) => {
                 placeholder="Name"
               />
             </div>
+             <div className="mb-4">
+              <label className="block text-white text-left text-lg">Name of the product</label>
+              <input
+                onChange={(e) => setName(e.target.value)}
+                className="form-input-lg mt-2 border border-gray-300 p-2 w-full rounded-md"
+                required
+                type="text"
+                placeholder="Name"
+              />
+            </div>
             <div className="mb-4">
               <label className="block text-left text-white text-lg">
                 Description

@@ -61,7 +61,7 @@ const Navigation = ({ web3Handler, account }) => {
                 className="text-white hover:scale-110  hover:bg-black/50 hover:rounded-none"
                 to="/my-listed-items"
               >
-                The Listed Products
+                Your Listed Products
               </Nav.Link>
               <Nav.Link
                 as={Link}

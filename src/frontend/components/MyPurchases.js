@@ -5,6 +5,7 @@ import { Row, Col, Card } from "react-bootstrap";
 export default function MyPurchases({ marketplace, nft, account }) {
   const [loading, setLoading] = useState(true);
   const [purchases, setPurchases] = useState([]);
+
   const loadPurchasedItems = async () => {
     // Fetch purchased items from marketplace by quering Offered events with the buyer set as the user
     const filter = marketplace.filters.Bought(
@@ -16,19 +17,24 @@ export default function MyPurchases({ marketplace, nft, account }) {
       account
     );
     const results = await marketplace.queryFilter(filter);
-    //Fetch metadata of each nft and add that to listedItem object.
+
+    // Fetch metadata of each NFT and add that to listedItem object.
     const purchases = await Promise.all(
       results.map(async (i) => {
         // fetch arguments from each result
         i = i.args;
+
         // get uri url from nft contract
         const uri = await nft.tokenURI(i.tokenId);
-        // use uri to fetch the nft metadata stored on ipfs
+
+        // use uri to fetch the nft metadata stored on IPFS
         const response = await fetch(uri);
         const metadata = await response.json();
+
         // get total price of item (item price + fee)
         const totalPrice = await marketplace.getTotalPrice(i.itemId);
-        // define listed item object
+
+        // define purchased item object
         let purchasedItem = {
           totalPrice,
           price: i.price,
@@ -40,28 +46,35 @@ export default function MyPurchases({ marketplace, nft, account }) {
         return purchasedItem;
       })
     );
+
     setLoading(false);
     setPurchases(purchases);
   };
+
   useEffect(() => {
     loadPurchasedItems();
   }, []);
+
   if (loading)
     return (
-      <main className=" mt-10" style={{ padding: "1rem 0" }}>
+      <main
+        className="mt-24 text-center"
+        style={{ padding: "1rem 0", marginTop: "80px" }}
+      >
         <h2>Loading...</h2>
       </main>
     );
+
   return (
     <div className="flex justify-center">
       {purchases.length > 0 ? (
-        <div className="px-5 container">
+        <div className="px-5 container" style={{ marginTop: "80px" }}>
           <Row xs={1} md={2} lg={4} className="g-4 py-5">
             {purchases.map((item, idx) => (
               <Col key={idx} className="overflow-hidden">
                 <Card>
                   <Card.Img variant="top" src={item.image} />
-                  <Card.Footer>
+                  <Card.Footer className="text-center">
                     {ethers.utils.formatEther(item.totalPrice)} ETH
                   </Card.Footer>
                 </Card>
@@ -71,10 +84,10 @@ export default function MyPurchases({ marketplace, nft, account }) {
         </div>
       ) : (
         <main
-          className=" text-white"
+          className="text-white text-center"
           style={{
             padding: "1rem 0",
-            marginTop: "100px",
+            marginTop: "120px",
             position: "relative",
           }}
         >

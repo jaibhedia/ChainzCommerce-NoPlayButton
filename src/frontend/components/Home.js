@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import nftImg from "./assets/nfteth.jpeg";
 import item1 from "./assets/asset.jpg";
-import item2 from "./assets/etheth.jpeg";
-import item3 from "./assets/it3.jpeg";
+import item2 from "./assets/sections.avif";
+import item3 from "./assets/buy.webp";
 import item4 from "./assets/it4.jpeg";
 import logo from "./assets/logo.jpeg";
 import additionalItem from "./assets/item1.jpeg";
