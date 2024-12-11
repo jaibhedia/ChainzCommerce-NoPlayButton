@@ -101,7 +101,7 @@ export default function MyListedItems({ marketplace, nft, account }) {
         </div>
       ) : (
         <main style={{ padding: "1rem 0" }}>
-          <h2>No listed assets</h2>
+          <h2>No listed products</h2>
         </main>
       )}
     </div>

@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import nftImg from "./assets/nfteth.jpeg";
-import item1 from "./assets/item1.jpeg";
+import item1 from "./assets/asset.jpg";
 import item2 from "./assets/etheth.jpeg";
 import item3 from "./assets/it3.jpeg";
 import item4 from "./assets/it4.jpeg";
@@ -34,8 +34,8 @@ const Home = ({ web3Handler, account }) => {
                   is your inexhaustible asset
                 </p>
                 <p className="text-sm md:text-lg text-gray-600 mb-4">
-                  Confirm data to trade, earn, and win crypto assets in a
-                  decentralized privacy-preserving network
+                  Buy and sell products with NFTs in a
+                  decentralized privacy-preserving platform
                 </p>
                 <div className="bg-blue-500 hover:scale-110 hover:transition-transform font-bold bg-gradient-to-r from-blue-700 to-green-400 text-white py-2 h-11 text-center w-full sm:w-3/4 md:w-1/2 lg:w-1/3 px-4 rounded cursor-pointer hover:bg-blue-600">
                   <div>
@@ -92,8 +92,8 @@ const Home = ({ web3Handler, account }) => {
               Add your product
             </h2>
             <p className="text-gray-600 mb-6">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Become a seller or buyer and step into the world of shopping
+              on the chain.
             </p>
             <div className="flex flex-col items-center justify-center">
               <div className="bg-none border-3 border-blue-700 text-white py-2 w-full md:w-2/3 lg:w-1/2 px-6 rounded-none cursor-pointer hover:bg-blue-700">
@@ -116,16 +116,16 @@ const Home = ({ web3Handler, account }) => {
           <p className=" text-gray-300  tracking-wide">
             Total products <br />
             <span className="font-semibold text-white text-xl tracking-wide">
-              25506
+              200+
             </span>
           </p>
         </div>
         <div className="bg-none border-3 border-gray-500 p-4 rounded-md hover:scale-105 hover:transition-transform cursor-pointer">
           <img src={item2} alt="item2" />
           <p className="text-gray-300">
-            Market Cap <br />
+            Sections <br />
             <span className="font-semibold text-white text-xl tracking-wide">
-              332,372,544
+              10+
             </span>
           </p>
         </div>
@@ -133,18 +133,18 @@ const Home = ({ web3Handler, account }) => {
           <img src={item3} alt="item3" />
 
           <p className="text-gray-300">
-            TVL <br />
+            Buy Again <br />
             <span className="font-semibold text-white text-xl tracking-wide">
-              $4.20b
+              check
             </span>
           </p>
         </div>
         <div className="bg-none border-3 border-gray-500 p-4 rounded-md hover:scale-105 hover:transition-transform cursor-pointer">
           <img src={item4} alt="item4" />
           <p className="text-gray-300">
-            Price <br />
+            Recently Seen <br />
             <span className="font-semibold text-white text-xl tracking-wide">
-              $2.52m
+              check
             </span>
           </p>
         </div>
@@ -156,7 +156,7 @@ const Home = ({ web3Handler, account }) => {
           <p className="text-gray-300">
             Exclusive Collections <br />
             <span className="font-semibold text-white text-xl tracking-wide">
-              Discover limited edition NFT collections and product.
+              Get limited edition NFTs with products.
             </span>
           </p>
         </div>
@@ -176,7 +176,7 @@ const Home = ({ web3Handler, account }) => {
           <p className="text-gray-300">
             Governance Features <br />
             <span className="font-semibold text-white text-xl tracking-wide">
-              Participate in platform decisions with governance.
+              Participate in platform decisions with governance [beta]
             </span>
           </p>
         </div>

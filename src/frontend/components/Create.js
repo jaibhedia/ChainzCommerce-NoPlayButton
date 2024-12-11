@@ -121,12 +121,12 @@ const Create = ({ marketplace, nft }) => {
       <div className="container mx-auto py-10  p-10 sm:mt-20 min-h-screen relative">
         <main className="max-w-2xl p-8 mx-auto  mt-14 bg-none border-3 border-gray-500  rounded-lg shadow-lg">
           <h1 className="text-3xl font-bold mb-6 text-white">
-            Create Your NFT
+            Create Your Product
           </h1>
           <div className="space-y-4">
             <div className="mb-4">
               <label className="block text-white text-lg">
-                Upload NFT File
+                Upload Image File of the Product
               </label>
               <input
                 onChange={(e) => setFile(e.target.files[0])}
@@ -174,7 +174,7 @@ const Create = ({ marketplace, nft }) => {
                 onClick={sendFileToIPFS}
                 className="bg-none border-3 border-blue-600 text-white py-3 px-8 rounded-none hover:bg-blue-600 transition duration-300"
               >
-                Create & List Your NFT!
+                Create & List Your Product!
               </button>
             </div>
           </div>

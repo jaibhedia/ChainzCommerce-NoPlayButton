@@ -47,28 +47,28 @@ const Navigation = ({ web3Handler, account }) => {
                 as={Link}
                 to="/my-marketplace"
               >
-                Your Marketplace
+                The Marketplace
               </Nav.Link>
               <Nav.Link
                 as={Link}
                 className="text-white hover:scale-110  hover:bg-black/50 hover:rounded-none"
                 to="/create"
               >
-                Create Your NFT
+                Create Your Product
               </Nav.Link>
               <Nav.Link
                 as={Link}
                 className="text-white hover:scale-110  hover:bg-black/50 hover:rounded-none"
                 to="/my-listed-items"
               >
-                Your Listed NFTs
+                The Listed Products
               </Nav.Link>
               <Nav.Link
                 as={Link}
                 className="text-white hover:scale-110  hover:bg-black/50 hover:rounded-none"
                 to="/my-purchases"
               >
-                Your Purchased NFTs
+                Your Purchased Products
               </Nav.Link>
 
               <div className="md:ml-4">
@@ -124,21 +124,21 @@ const Navigation = ({ web3Handler, account }) => {
               className="text-white hover:scale-110  hover:bg-black/50 hover:rounded-none"
               to="/create"
             >
-              Create Your NFT
+              Create Your Product
             </Nav.Link>
             <Nav.Link
               as={Link}
               className="text-white hover:scale-110  hover:bg-black/50 hover:rounded-none"
               to="/my-listed-items"
             >
-              Your Listed NFTs
+              Your Listed Products
             </Nav.Link>
             <Nav.Link
               as={Link}
               className="text-white hover:scale-110  hover:bg-black/50 hover:rounded-none"
               to="/my-purchases"
             >
-              Your Purchased NFTs
+              Your Purchased Products
             </Nav.Link>
 
             <div className="md:ml-4">

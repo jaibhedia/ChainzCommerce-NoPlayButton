@@ -1,9 +1,13 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ethers } from "ethers";
 
 export const MyMarketPlace = ({ marketplace, nft, account, web3Handler }) => {
   const [loading, setLoading] = useState(true);
   const [items, setItems] = useState([]);
+  const [selectedItem, setSelectedItem] = useState(null);
+  const [address, setAddress] = useState("");
+  const [showAddressModal, setShowAddressModal] = useState(false);
+
   const loadMarketplaceItems = async () => {
     // Load all unsold items
     const itemCount = await marketplace.itemCount();
@@ -34,16 +38,30 @@ export const MyMarketPlace = ({ marketplace, nft, account, web3Handler }) => {
   };
 
   const buyMarketItem = async (item) => {
+    // Validate address before proceeding
+    if (!address) {
+      alert("Please enter a valid address.");
+      return;
+    }
+
     await (
       await marketplace.purchaseItem(item.itemId, { value: item.totalPrice })
     ).wait();
-    loadMarketplaceItems();
+
+    // You can send the shipping address to your backend here if needed
+    console.log("Shipping Address:", address);
+
+    setAddress(""); // Reset address input
+    setShowAddressModal(false); // Close modal
+    loadMarketplaceItems(); // Reload items
   };
+
   useEffect(() => {
     loadMarketplaceItems();
   }, []);
+
   return (
-    <div className=" mt-16">
+    <div className="mt-24">
       {items.length > 0 ? (
         <div className="px-5 container">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -61,7 +79,10 @@ export const MyMarketPlace = ({ marketplace, nft, account, web3Handler }) => {
                   </div>
                   <div className="mt-4">
                     <button
-                      onClick={() => buyMarketItem(item)}
+                      onClick={() => {
+                        setSelectedItem(item);
+                        setShowAddressModal(true);
+                      }}
                       className="bg-primary text-white py-2 px-4 rounded-lg"
                     >
                       Buy for {ethers.utils.formatEther(item.totalPrice)} ETH
@@ -73,11 +94,42 @@ export const MyMarketPlace = ({ marketplace, nft, account, web3Handler }) => {
           </div>
         </div>
       ) : (
-        <main className="p-4 ">
+        <main className="p-4">
           <h2 className="text-2xl text-white font-semibold">
-            No listed assets
+            No listed products
           </h2>
         </main>
+      )}
+
+      {/* Address Modal */}
+      {showAddressModal && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <h3 className="text-xl font-semibold mb-4">
+              Enter Shipping Address
+            </h3>
+            <textarea
+              value={address}
+              onChange={(e) => setAddress(e.target.value)}
+              placeholder="Enter your shipping address here..."
+              className="w-full border border-gray-300 p-2 rounded-lg mb-4"
+            />
+            <div className="flex justify-end space-x-4">
+              <button
+                onClick={() => setShowAddressModal(false)}
+                className="bg-gray-400 text-white py-2 px-4 rounded-lg"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={() => buyMarketItem(selectedItem)}
+                className="bg-primary text-white py-2 px-4 rounded-lg"
+              >
+                Confirm Purchase
+              </button>
+            </div>
+          </div>
+        </div>
       )}
     </div>
   );
