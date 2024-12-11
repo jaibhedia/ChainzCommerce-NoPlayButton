@@ -5,7 +5,7 @@ import { Nav } from "react-bootstrap";
 import { GrInstagram, GrTwitter } from "react-icons/gr";
 import { FaFacebook } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import logo from "./assets/logo.jpeg";
+import logo from "./assets/Logo.png";
 
 // import { create as ipfsHttpClient } from 'ipfs-http-client'
 // const client = ipfsHttpClient('https://ipfs.infura.io:5001/api/v0')

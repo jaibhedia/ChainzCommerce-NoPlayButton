@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Nav, Button } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import { MdMenu, MdClose } from "react-icons/md";
-import logo from "./assets/logo.jpeg";
+import logo from "./assets/Logo.png";
 
 const Navigation = ({ web3Handler, account }) => {
   const [isOpen, setIsOpen] = useState(false);

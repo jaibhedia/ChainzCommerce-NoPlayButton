@@ -36,7 +36,7 @@ export const MyMarketPlace = ({ marketplace, nft, account, web3Handler }) => {
 
   const buyMarketItem = async (item) => {
     if (!address) {
-      alert("Please enter a valid address.");
+      alert("Please enter a valid input.");
       return;
     }
 
@@ -44,7 +44,7 @@ export const MyMarketPlace = ({ marketplace, nft, account, web3Handler }) => {
       await marketplace.purchaseItem(item.itemId, { value: item.totalPrice })
     ).wait();
 
-    console.log("Shipping Address:", address);
+    console.log(" Contact Details & Shipping Address:", address);
     setAddress("");
     setShowAddressModal(false);
     loadMarketplaceItems();
@@ -115,12 +115,12 @@ export const MyMarketPlace = ({ marketplace, nft, account, web3Handler }) => {
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h3 className="text-xl font-semibold mb-4">
-              Enter Shipping Address
+              Enter Contact Details & Shipping Address
             </h3>
             <textarea
               value={address}
               onChange={(e) => setAddress(e.target.value)}
-              placeholder="Enter your shipping address here..."
+              placeholder="Enter your details here..."
               className="w-full border border-gray-300 p-2 rounded-lg mb-4"
             />
             <div className="flex justify-end space-x-4">
